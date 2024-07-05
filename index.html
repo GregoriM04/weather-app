@@ -48,7 +48,7 @@
     </header>
     <main class="main">
       <div class="container">
-        <div class="search-box">
+        <div class="search-box" id="search-box">
           <ion-icon name="location" class="location-icon"></ion-icon>
           <input
             type="text"
@@ -60,10 +60,39 @@
             <ion-icon name="search"></ion-icon>
           </button>
         </div>
+        <div class="weather-box" id="weather-box">
+          <img
+            src=""
+            class="weather-img"
+            id="weather-img"
+          />
+          <h2 class="temperature" id="temperature">30&</h2>
+          <h3 class="description" id="description">Partly Sunny</h3>
+        </div>
+        <div class="details" id="details">
+          <div class="humidity">
+            <div class="info">
+              <ion-icon name="water"></ion-icon>
+              <p>23$</p>
+            </div>
+            <h3>Humidity</h3>
+          </div>
+          <div class="wind-speed">
+            <div class="info">
+              <ion-icon name="rainy"></ion-icon>
+              <p>54km/h</p>
+            </div>
+            <h3>Wind Speed</h3>
+          </div>
+        </div>
+        <div class="not-found">
+          <img src="./assets/images/not-found.png" class="not-found-img" />
+          <h3 class="not-found-text">Oops! Try with a new location.</h3>
+        </div>
       </div>
     </main>
 
-    <!-- IonIcons Icons -->
+    <!-- IonIcons -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
