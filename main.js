@@ -31,16 +31,16 @@ const humidity = document.querySelector(".humidity .info p");
 const windSpeed = document.querySelector(".wind-speed .info p");
 const notFound = document.getElementById("not-found");
 
-submitButton.addEventListener("click", () => {
-  resetState();
+function mainProcess() {
+    // check if the input has a valid value
   if (userInput.value === "" || userInput.value === " ") {
     userInput.classList.add("shake");
     userInput.placeholder = "Not Valid!";
-    userInput.classList.add('error');
+    userInput.classList.add("error");
     container.style.height = "105px";
     setTimeout(() => {
       userInput.classList.remove("shake");
-      userInput.classList.remove('error');
+      userInput.classList.remove("error");
       userInput.placeholder = "Ex. France";
     }, 2100);
   } else {
@@ -55,14 +55,14 @@ submitButton.addEventListener("click", () => {
         let currentStatus = response.status;
         let status = currentStatus.toString();
 
-        // not found case
+        // not-found case
         if (status === "404") {
           notFound.style.display = "flex";
           notFound.classList.add("fadeIn");
           container.style.justifyContent = "space-around";
           container.style.height = "405px";
 
-        // success case
+          // success case
         } else if ((status = "200")) {
           const data = await response.json();
 
@@ -91,6 +91,7 @@ submitButton.addEventListener("click", () => {
               weatherImage.src = "";
           }
 
+          // print all data fetched
           temperature.innerHTML = `${parseInt(data.main.temp)}<span>°C</span>`;
           description.innerHTML = `${data.weather[0].description}`;
           humidity.innerHTML = `${data.main.humidity}%`;
@@ -112,12 +113,22 @@ submitButton.addEventListener("click", () => {
       }
     })();
   }
+}
+
+submitButton.addEventListener("click", () => {
+  resetState();
+  mainProcess();
+});
+userInput.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    mainProcess();
+  }
 });
 
 function resetState() {
   userInput.value === "";
   container.style.justifyContent = "center";
-//   container.style.height = "105px";
   errorFound.style.display = "none";
   weatherBox.style.display = "none";
   details.style.display = "none";

@@ -241,6 +241,10 @@ body.dark .location-icon {
   margin-inline: var(--spacing-2);
 }
 
+body.dark .user-input {
+  background-color: var(--light-color);
+}
+
 .user-input:focus {
   outline: 0;
   border: 2px solid var(--primary-color);
@@ -311,6 +315,11 @@ body.dark .submit-btn:active ion-icon {
 .error {
   background-color: var(--warning-color);
   color: var(--white-color);
+}
+
+body.dark .error {
+  background-color: var(--warning-color);
+  color: var(--black-color);
 }
 
 /* weather section */
@@ -433,7 +442,7 @@ body.dark .info p {
 
 
 .fadeIn {
-  animation: FadeIn 2000ms ease 0s 1 normal forwards;
+  animation: FadeIn 1600ms ease 0s 1 normal forwards;
 }
 
 @keyframes FadeIn {
