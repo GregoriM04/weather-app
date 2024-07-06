@@ -180,19 +180,8 @@ body.dark .appearance .switch .slider::before {
 .container {
   display: flex;
   align-items: center;
-
-  /* When nothing has been searched yet */
   justify-content: center;
   height: 105px;
-
-  /* when search is successful */
-  /* justify-content: space-between; */
-  /* height: 605px; */
-
-  /* when search has been found or an error was found */
-  /* justify-content: space-around;
-  height: 405px; */
-
   width: 400px;
   flex-direction: column;
   margin: 0 auto;
@@ -258,9 +247,7 @@ body.dark .user-input {
   width: 45px;
   height: 45px;
   background-color: var(--light-color);
-  /* background-color: red; */
   cursor: pointer;
-
   border: 0;
   border-radius: 50%;
 }
@@ -269,11 +256,9 @@ body.dark .user-input {
 body.dark .submit-btn ion-icon {
   font-size: 35px;
   color: var(--dark-color);
-  /* margin: var(--spacing-1) var(--spacing-2) 0 0; */
 }
 
 .submit-btn:hover {
-  /* border: 1px solid var(--primary-color); */
   -webkit-transition: var(--trans-3s);
   transition: var(--trans-3s);
 }
@@ -296,7 +281,6 @@ body.dark .submit-btn:active ion-icon {
 
 /* error status section */
 .errorStatus {
-  /* display: flex; */
   display: none;
   justify-content: center;
   align-items: center;
@@ -325,7 +309,6 @@ body.dark .error {
 /* weather section */
 .weather-box {
   display: none;
-  /* display: flex; */
   flex-direction: column;
   align-items: center;
   padding-bottom: var(--spacing-3);
@@ -336,7 +319,6 @@ body.dark .error {
 .weather-box .weather-img {
   width: 150px;
   height: auto;
-  /* padding-top: var(--spacing-5); */
   -webkit-transition: var(--trans-3s);
   transition: var(--trans-3s);
 }
@@ -354,7 +336,6 @@ body.dark .error {
 /* details section */
 .details {
   width: 100%;
-  /* display: flex; */
   display: none;
   justify-content: space-around;
   align-items: center;
@@ -392,7 +373,6 @@ body.dark .info p {
 /* not-found section*/
 .not-found {
   display: none;
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -413,50 +393,48 @@ body.dark .info p {
 }
 
 @keyframes shake {
-	0%,
-	100% {
-		transform: translateX(0);
-	}
+  0%,
+  100% {
+    transform: translateX(0);
+  }
 
-	10%,
-	30%,
-	50%,
-	70% {
-		transform: translateX(-10px);
-	}
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateX(-10px);
+  }
 
-	20%,
-	40%,
-	60% {
-		transform: translateX(10px);
-	}
+  20%,
+  40%,
+  60% {
+    transform: translateX(10px);
+  }
 
-	80% {
-		transform: translateX(8px);
-	}
+  80% {
+    transform: translateX(8px);
+  }
 
-	90% {
-		transform: translateX(-8px);
-	}
+  90% {
+    transform: translateX(-8px);
+  }
 }
-
 
 .fadeIn {
   animation: FadeIn 1600ms ease 0s 1 normal forwards;
 }
 
 @keyframes FadeIn {
-	0% {
-		opacity: 0;
-		transform: scale(1.4);
-	}
+  0% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
 
-	100% {
-		opacity: 1;
-		transform: scale(1);
-	}
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
-
 
 /* Media queries - From Desktop to Mobile */
 /* Largest devices (1600px and down) */
