@@ -51,19 +51,18 @@ function mainProcess() {
           `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=f9ab410e8c21da04ab0df82a437adb82`
         );
 
-        // get response status and covert it to string
-        let currentStatus = response.status;
-        let status = currentStatus.toString();
+        // getting the status
+        let status = response.status;
 
         // not-found case
-        if (status === "404") {
+        if (status == 404) {
           notFound.style.display = "flex";
           notFound.classList.add("fadeIn");
           container.style.justifyContent = "space-around";
           container.style.height = "405px";
 
           // success case
-        } else if ((status = "200")) {
+        } else if ((status == 200)) {
           const data = await response.json();
 
           switch (data.weather[0].main) {
@@ -122,6 +121,7 @@ submitButton.addEventListener("click", () => {
 userInput.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
+    resetState();
     mainProcess();
   }
 });
