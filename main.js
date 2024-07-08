@@ -30,18 +30,21 @@ const details = document.getElementById("details");
 const humidity = document.querySelector(".humidity .info p");
 const windSpeed = document.querySelector(".wind-speed .info p");
 const notFound = document.getElementById("not-found");
+const notValid = document.getElementById("not-valid");
 
 function mainProcess() {
     // check if the input has a valid value
   if (userInput.value === "" || userInput.value === " ") {
     userInput.classList.add("shake");
-    userInput.placeholder = "Not Valid!";
     userInput.classList.add("error");
     container.style.height = "105px";
+    notValid.style.display = "block";
     setTimeout(() => {
       userInput.classList.remove("shake");
       userInput.classList.remove("error");
       userInput.placeholder = "Ex. France";
+      notValid.style.display = "none";
+      userInput.value = "";
     }, 2100);
   } else {
     let city = userInput.value;

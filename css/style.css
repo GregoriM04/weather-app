@@ -179,6 +179,7 @@ body.dark .appearance .switch .slider::before {
 
 .container {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   height: 105px;
@@ -385,6 +386,19 @@ body.dark .info p {
   width: 150px;
   height: auto;
   padding-bottom: var(--spacing-4);
+}
+
+.not-valid {
+  padding: var(--spacing-1);
+  border-radius: 12px;
+  color: var(--warning-color);
+  position: absolute;
+  bottom: 0;
+  display: none;
+}
+
+body.dark .not-valid {
+  color: var(--light-color);
 }
 
 /* ANIMATIONS */
