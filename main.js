@@ -33,7 +33,7 @@ const notFound = document.getElementById("not-found");
 const notValid = document.getElementById("not-valid");
 
 function mainProcess() {
-    // check if the input has a valid value
+  // check if the input has a valid value
   if (userInput.value === "" || userInput.value === " ") {
     userInput.classList.add("shake");
     userInput.classList.add("error");
@@ -65,7 +65,7 @@ function mainProcess() {
           container.style.height = "405px";
 
           // success case
-        } else if ((status == 200)) {
+        } else if (status == 200) {
           const data = await response.json();
 
           switch (data.weather[0].main) {
@@ -121,12 +121,17 @@ submitButton.addEventListener("click", () => {
   resetState();
   mainProcess();
 });
-userInput.addEventListener("keypress", function (event) {
+
+userInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
     resetState();
     mainProcess();
   }
+});
+
+userInput.addEventListener("keydown", () => {
+  spaceChecker();
 });
 
 function resetState() {
@@ -136,4 +141,12 @@ function resetState() {
   weatherBox.style.display = "none";
   details.style.display = "none";
   notFound.style.display = "none";
+}
+
+function spaceChecker() {
+  if (userInput.value === " ") {
+    userInput.value = "";
+    resetState();
+    mainProcess();
+  }
 }
