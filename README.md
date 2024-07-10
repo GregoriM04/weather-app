@@ -20,3 +20,5 @@ The app works; it doesn't do what was intended initially. Nonetheless, here are 
 - [ ] ...
 
 I hope to have those (and any others I might've missed) in a few weeks. :)
+
+By the way, you can [click here](https://gregorim04.github.io/weather-app/) to visit the live page.
